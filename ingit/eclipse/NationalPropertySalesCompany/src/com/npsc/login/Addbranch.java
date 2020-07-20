@@ -7,6 +7,8 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -116,9 +118,22 @@ public class Addbranch extends JFrame{
 	         gbc.gridy = 2;
 	         JLabel phoneni = new JLabel("Phone no");
 	         formPanel.add(phoneni, gbc);
+	         
+	       
 
 	         gbc.gridx = 1;
 	         formPanel.add(phonenum, gbc);
+	         
+	         phonenum.addKeyListener(new KeyAdapter() {
+	             // override keyReleased listener on the Email TextField
+	             @Override
+	             public void keyReleased(KeyEvent e) {
+	            	 phonenumActionPerformed(e);
+	                                
+	             }
+	         });
+
+	         
 	         //package ends
 	         
 	       //package starts
@@ -219,4 +234,17 @@ public class Addbranch extends JFrame{
 	        AdminDashboard admin= new AdminDashboard();
 	        admin.setVisible(true);
 	    }
+	    
+	    private void phonenumActionPerformed(KeyEvent evt) {
+	          try {
+	      Integer  x = Integer.parseInt(phonenum.getText());
+	    } catch (NumberFormatException nfe) {
+	          JOptionPane.showMessageDialog(null,"Please enter only number");
+	        phonenum.setText("");
+	    }
+	    }
+	    
+	   
 }
+
+

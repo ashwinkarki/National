@@ -168,16 +168,7 @@ public class AdminDashboard extends JFrame {
         gbc.gridx = 1;
         formPanel.add(password, gbc);
         //package ends
-        
-//        gbc.anchor = GridBagConstraints.CENTER;
-//        gbc.gridx = 0;
-//        gbc.gridy = 2;
-//        JButton loginButton = new JButton("login");
-//        formPanel.add(loginButton, gbc);
-//
-//        gbc.gridx = 1;
-//        JButton registerButton = new JButton("register");
-//        formPanel.add(registerButton, gbc);
+
 
         return formPanel;
     }
@@ -369,4 +360,7 @@ public class AdminDashboard extends JFrame {
         }
 
     }
+    
+    
+    
 }
