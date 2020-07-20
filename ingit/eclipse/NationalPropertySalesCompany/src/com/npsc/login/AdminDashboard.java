@@ -23,7 +23,7 @@ public class AdminDashboard extends JFrame {
     private static JPanel panel,subPanel1,panel2,panel3;
     
     public AdminDashboard() {
-    	
+    	System.out.print("added");
     	 
          setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
           add(createTopPanel(), BorderLayout.PAGE_START);
