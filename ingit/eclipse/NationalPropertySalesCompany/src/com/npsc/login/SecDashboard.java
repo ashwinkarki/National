@@ -93,8 +93,8 @@ public class SecDashboard extends JFrame {
         }
         
         if(filteredFlat!=null){
-          fetchFlat();   
-           
+        	fetchFlat();
+        	           
         }	
 		
 	        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -301,7 +301,7 @@ public class SecDashboard extends JFrame {
 	    
 	       protected void initDetailFlat(int selectedRow) {
 	        flat = filteredFlat.get(jTable1.convertRowIndexToModel(selectedRow));
-	      
+	        System.out.print("flatselect is"+flat);
 	      
 	    }
 	       

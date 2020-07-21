@@ -129,7 +129,12 @@ else{
     @Override
     public List<Flat> getBySecretaryId() {
    Secretary s=SecretaryDaoImpl.sec;
+   System.out.println("secreatary is"+s);
+   System.out.print("flat size is"+flatList.size());
        List<Flat> newArr=new ArrayList<>();
+       
+       System.out.println(flatList);
+       
       for(Flat h:flatList){
           if(h.getSec().getId()==s.getId()){
               newArr.add(h);
