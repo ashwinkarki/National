@@ -163,6 +163,16 @@ public class SecDashboard extends JFrame {
 	                 flatSaleHistoryActionPerformed(evt);
 	             }
 	         });
+	         
+	         gbc.gridx = 7;
+	         buttomPanel.add(exit   , gbc);
+	         
+	         exit.addActionListener(new ActionListener() {
+	             public void actionPerformed(ActionEvent evt) {
+	                 exitActionPerformed(evt);
+	             }
+	         });
+	         
 	          return buttomPanel;
 	    }
 
@@ -285,7 +295,7 @@ public class SecDashboard extends JFrame {
 
 		protected void initDetail(int selectedRow) {
 	        house = filteredHouse.get(jTable1.convertRowIndexToModel(selectedRow));
-	    
+	    System.out.print("house seelctd"+house);
 	      
 	    }
 	    
@@ -308,6 +318,11 @@ public class SecDashboard extends JFrame {
 	       jScrollPane1.setViewportView(jTable1);
 	       
 	            }
+	            jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+	                public void mouseClicked(java.awt.event.MouseEvent evt) {
+	                    jTable1MouseClicked(evt);
+	                }
+	            });
 	            return jScrollPane1;
 	     
 	       }   
@@ -364,7 +379,7 @@ public class SecDashboard extends JFrame {
 	        }
 	     }
 	    
-	    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+	    private void jButton1ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 	        if(house==null){
 	            JOptionPane.showMessageDialog(null,"Please select House");
 	        }
@@ -415,7 +430,7 @@ public class SecDashboard extends JFrame {
 	            sh.setVisible(true);
 	    }
 	    
-	    private void exitActionPerformed(ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+	    private void exitActionPerformed(ActionEvent evt) {
 	        houseList=HouseDAOImpl.houseList;
 	                
 	        WriteReadFileHouse.writeFile(houseList);
@@ -437,5 +452,9 @@ public class SecDashboard extends JFrame {
 	    private void flatTableMouseClicked(MouseEvent evt) {
 	        initDetailFlat(flatTable.getSelectedRow());
 	    }
+	    
+	    private void jTable1MouseClicked(MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+	        initDetail(jTable1.getSelectedRow());
+	    }  
 		    
 }
