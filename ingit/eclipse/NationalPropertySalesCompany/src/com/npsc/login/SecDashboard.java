@@ -8,6 +8,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,6 +81,7 @@ public class SecDashboard extends JFrame {
 		 jTable1=new JTable();
 		 flatTable=new JTable();
 		  house=null;
+		  
 		   houseList=houseDAO.getAll();
            flatList=flatDAO.getAll();
            
@@ -316,6 +318,12 @@ public class SecDashboard extends JFrame {
 	       // flatList=new ArrayList<>();
 	        flatTable.setModel(new FlatModel(filteredFlat));
 	        jScrollPane2.setViewportView(flatTable);
+	        
+	        flatTable.addMouseListener(new java.awt.event.MouseAdapter() {
+	            public void mouseClicked(java.awt.event.MouseEvent evt) {
+	                flatTableMouseClicked(evt);
+	            }
+	        });
 	        return jScrollPane2;
 	    }
 
@@ -419,10 +427,15 @@ public class SecDashboard extends JFrame {
 	    }
 	    
 	    
-	    private void houseSaleHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_houseSaleHistoryActionPerformed
+	    private void houseSaleHistoryActionPerformed(ActionEvent evt) {//GEN-FIRST:event_houseSaleHistoryActionPerformed
             setVisible(false);
             SaleHistory sh=new SaleHistory();
             sh.setVisible(true);
     }
+	    
+	    
+	    private void flatTableMouseClicked(MouseEvent evt) {
+	        initDetailFlat(flatTable.getSelectedRow());
+	    }
 		    
 }
