@@ -1,6 +1,7 @@
 package com.npsc.login;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -36,7 +37,7 @@ public class Addbranch extends JFrame{
 	private JButton jButton2;
 	
 	public Addbranch() {
-		  setSize(700,300);
+		setPreferredSize(new Dimension(400, 300));
 		  phonenum = new JTextField(10);
 		  saveBtn=new JButton("Save");
 		  jButton2=new JButton("Exit");
@@ -125,8 +126,7 @@ public class Addbranch extends JFrame{
 	         formPanel.add(phonenum, gbc);
 	         
 	         phonenum.addKeyListener(new KeyAdapter() {
-	             // override keyReleased listener on the Email TextField
-	             @Override
+	            @Override
 	             public void keyReleased(KeyEvent e) {
 	            	 phonenumActionPerformed(e);
 	                                

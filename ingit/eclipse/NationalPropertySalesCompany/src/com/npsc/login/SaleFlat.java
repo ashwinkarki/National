@@ -1,6 +1,7 @@
 package com.npsc.login;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -38,13 +39,14 @@ public class SaleFlat  extends JFrame  {
 	    private SaleFlatDAO sfDAO=new SaleDAOFlatImpl();
 
 	public SaleFlat() {
+		setPreferredSize(new Dimension(600, 600));
 		jButton1=new JButton("Sale");
 		jButton2=new JButton("Back");
 		jTextField1=new JTextField(10);
 		
 		f=SecDashboard.flat;
 		
-		 	setSize(700,300);
+		 	//setSize(700,300);
 		 setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	        add(createTopPanel(), BorderLayout.PAGE_START);
 	        add(createMainPanel(), BorderLayout.CENTER);
@@ -132,7 +134,7 @@ public class SaleFlat  extends JFrame  {
 	    }
 
 
-	    private void jButton1ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+	    private void jButton1ActionPerformed(ActionEvent evt) {
 	        f.setSoldPrice(Integer.parseInt(jTextField1.getText()));
 	        SaleFlats sfs=new SaleFlats(f,f.getSec());
 	       int id=sfDAO.getMaximumid();

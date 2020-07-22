@@ -1,6 +1,7 @@
 package com.npsc.login;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -38,6 +39,7 @@ public class UpdateFlat  extends JFrame  {
     
     
     public UpdateFlat() {
+    	setPreferredSize(new Dimension(600, 600));
     	 f=SecDashboard.flat;
     	 
 	update=new JButton("Update"); 
@@ -48,7 +50,7 @@ public class UpdateFlat  extends JFrame  {
 	rooms=new JTextField(10);
 	monthlyCharge=new JTextField(10);
 	 
-		setSize(700,300);
+		//setSize(700,300);
 		 setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	        add(createTopPanel(), BorderLayout.PAGE_START);
 	        add(createMainPanel(), BorderLayout.CENTER);
@@ -188,13 +190,13 @@ public class UpdateFlat  extends JFrame  {
 	        return topPanel;
 	    }
 	    
-	    private void jButton1ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+	    private void jButton1ActionPerformed(ActionEvent evt) {
 	        setVisible(false);
 	        SecDashboard s=new SecDashboard();
 	        s.setVisible(true);
 	    }
 	    
-	    private void updateActionPerformed(ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
+	    private void updateActionPerformed(ActionEvent evt) {
 	    System.out.println("f is"+f);
 	        Flat newFlat=new Flat(f.getId(),address.getText(),
 	            Integer.parseInt(rooms.getText()), Integer.parseInt(sellingPrice.getText()), Integer.parseInt(floor.getText()), Integer.parseInt(monthlyCharge.getText()));
@@ -215,7 +217,7 @@ public class UpdateFlat  extends JFrame  {
 
 	    }
 	    
-	    private void roomsKeyReleased(KeyEvent evt) {//GEN-FIRST:event_roomsKeyReleased
+	    private void roomsKeyReleased(KeyEvent evt) {
 	          try {
 	      Integer  x = Integer.parseInt(rooms.getText());
 	    } catch (NumberFormatException nfe) {
@@ -224,7 +226,7 @@ public class UpdateFlat  extends JFrame  {
 	    }
 	    }
 	    
-	    private void sellingPriceActionPerformed(ActionEvent evt) {//GEN-FIRST:event_sellingPriceActionPerformed
+	    private void sellingPriceActionPerformed(ActionEvent evt) {
 	           try {
 	      Integer  x = Integer.parseInt(sellingPrice.getText());
 	    } catch (NumberFormatException nfe) {

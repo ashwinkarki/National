@@ -1,6 +1,7 @@
 package com.npsc.login;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -36,6 +37,7 @@ public class SaleHistory extends JFrame  {
   
 	
 	public SaleHistory() {
+		setPreferredSize(new Dimension(600, 600));
 		jButton1=new JButton("Back");
 		jTable1=new JTable();
         saleList=salesDAO.getAll();
@@ -46,7 +48,7 @@ public class SaleHistory extends JFrame  {
         fetch();
          }
 
-	 	setSize(700,300);
+	 	//setSize(700,300);
 	 	setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         add(createTopPanel(), BorderLayout.PAGE_START);
         add(createMainPanel(), BorderLayout.CENTER);

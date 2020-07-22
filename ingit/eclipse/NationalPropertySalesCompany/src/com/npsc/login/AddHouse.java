@@ -1,6 +1,7 @@
 package com.npsc.login;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -41,6 +42,7 @@ public class AddHouse   extends JFrame {
     
 	
 	public AddHouse() {
+		setPreferredSize(new Dimension(600, 600));
 		garage=new JCheckBox();
 		garden=new JCheckBox();
 		
@@ -52,7 +54,7 @@ public class AddHouse   extends JFrame {
 		saveBtn=new JButton("Save");
 		jButton2=new JButton("Back");
 		
-		setSize(700,300);
+		//setSize(700,300);
 		 setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	        add(createTopPanel(), BorderLayout.PAGE_START);
 	        add(createMainPanel(), BorderLayout.CENTER);
@@ -134,7 +136,7 @@ public class AddHouse   extends JFrame {
 	         formPanel.add(sellingprice, gbc);
 	         
 	         sellingprice.addKeyListener(new KeyAdapter() {
-	             // override keyReleased listener on the Email TextField
+	           
 	             @Override
 	             public void keyReleased(KeyEvent e) {
 	            	 sellingpriceKeyReleased(e);	                                
@@ -213,7 +215,7 @@ public class AddHouse   extends JFrame {
 	    }
 	    
 	    
-	    private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
+	    private void saveBtnActionPerformed(ActionEvent evt) {
 	        House h=new House(address.getText(),Integer.parseInt(room.getText()),Integer.parseInt(sellingprice.getText()),Integer.parseInt(nooffloor.getText()), gardenSelected, garageSelected);
 	        
 	        

@@ -1,6 +1,7 @@
 package com.npsc.login;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -42,7 +43,7 @@ public class UpdateHouse  extends JFrame  {
      private JCheckBox garden;
     
 public UpdateHouse() {
-	
+	setPreferredSize(new Dimension(600, 600));
 	jButton2=new JButton("Back");
 	saveBtn=new JButton("Update");
 	nooffloor=new JTextField(10);
@@ -54,7 +55,7 @@ public UpdateHouse() {
     house=SecDashboard.house;	
     
     
-		setSize(700,300);
+		//setSize(700,300);
 		 setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	        add(createTopPanel(), BorderLayout.PAGE_START);
 	        add(createMainPanel(), BorderLayout.CENTER);
@@ -174,7 +175,7 @@ public UpdateHouse() {
 	         formPanel.add(garage, gbc);
 	         //package ends
 	         
-	         nooffloor.addKeyListener(new java.awt.event.KeyAdapter() {
+	         nooffloor.addKeyListener(new KeyAdapter() {
 	             public void keyReleased(java.awt.event.KeyEvent evt) {
 	                 nooffloorKeyReleased(evt);
 	             }
@@ -230,7 +231,7 @@ public UpdateHouse() {
 	        sec.setVisible(true);
 	    }
 	    
-	    private void sellingpriceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sellingpriceKeyReleased
+	    private void sellingpriceKeyReleased(KeyEvent evt) {
             try {
       Integer  x = Integer.parseInt(sellingprice.getText());
     } catch (NumberFormatException nfe) {
@@ -239,7 +240,7 @@ public UpdateHouse() {
     }
     }
 	    
-	    private void nooffloorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nooffloorKeyReleased
+	    private void nooffloorKeyReleased(KeyEvent evt) {
             try {
      Integer  x = Integer.parseInt(nooffloor.getText());
    } catch (NumberFormatException nfe) {
@@ -248,7 +249,7 @@ public UpdateHouse() {
    }
    }
 	    
-	    private void roomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_roomKeyReleased
+	    private void roomKeyReleased(KeyEvent evt) {
 	         try {
 	      Integer  x = Integer.parseInt(room.getText());
 	    } catch (NumberFormatException nfe) {
@@ -257,7 +258,7 @@ public UpdateHouse() {
 	    }
 	    }
 	    
-	    private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
+	    private void saveBtnActionPerformed(ActionEvent evt) {
 	        
 	        House newHouse=new House(house.getId(),address.getText(),Integer.parseInt(room.getText()),Integer.parseInt(sellingprice.getText()),Integer.parseInt(nooffloor.getText()),gardenSelected, garageSelected,
 	     house.getSecretary());
@@ -276,13 +277,13 @@ public UpdateHouse() {
 	    
 	    
 
-	    private void gardenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gardenActionPerformed
+	    private void gardenActionPerformed(ActionEvent evt) {
 	        if(garden.isSelected()){
 	            gardenSelected=true;
 	        }
 	    }//GEN-LAST:event_gardenActionPerformed
 
-	    private void garageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_garageActionPerformed
+	    private void garageActionPerformed(ActionEvent evt) {
 	        if(garage.isSelected()){
 	            garageSelected=true;
 	        }

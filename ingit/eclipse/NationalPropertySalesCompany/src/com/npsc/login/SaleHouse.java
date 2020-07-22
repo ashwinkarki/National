@@ -1,6 +1,7 @@
 package com.npsc.login;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -44,13 +45,14 @@ public class SaleHouse extends JFrame {
 	    private SaleFlatDAO sfDAO=new SaleDAOFlatImpl();
 
 	public SaleHouse() {
+		setPreferredSize(new Dimension(600, 600));
 		jButton1=new JButton("Sale");
 		jButton2=new JButton("Back");
 		jTextField1=new JTextField(10);
 		
 		  h=SecDashboard.house;
 		
-		 	setSize(700,300);
+		 	//setSize(700,300);
 		 setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	        add(createTopPanel(), BorderLayout.PAGE_START);
 	        add(createMainPanel(), BorderLayout.CENTER);
@@ -143,7 +145,7 @@ public class SaleHouse extends JFrame {
 	    }
 
 
-	    private void jButton1ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+	    private void jButton1ActionPerformed(ActionEvent evt) {
 	    	h.setSoldPrice(Integer.parseInt(jTextField1.getText()));
 	        Sale s=new Sale(h,h.getSecretary());
 	       int id=salesDAO.getMaximumid();
@@ -169,7 +171,7 @@ public class SaleHouse extends JFrame {
 	    
 	   
 	    
-	    private void jTextField1KeyReleased(KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+	    private void jTextField1KeyReleased(KeyEvent evt) {
             try {
       Integer  x = Integer.parseInt(jTextField1.getText());
     } catch (NumberFormatException nfe) {

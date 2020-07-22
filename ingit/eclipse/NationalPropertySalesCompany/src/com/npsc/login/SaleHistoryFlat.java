@@ -1,6 +1,7 @@
 package com.npsc.login;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -34,6 +35,7 @@ public class SaleHistoryFlat  extends JFrame  {
 
 	
 	public SaleHistoryFlat() {
+		setPreferredSize(new Dimension(600, 600));
 		jButton1=new JButton("Back");
 		jTable1=new JTable();
 		 saleList=salesDAO.getAll();
@@ -41,7 +43,7 @@ public class SaleHistoryFlat  extends JFrame  {
 	      if (newList !=null){
 	        fetch();
 	         }
-	 	setSize(700,300);
+	 	//setSize(700,300);
 	 	setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         add(createTopPanel(), BorderLayout.PAGE_START);
         add(createMainPanel(), BorderLayout.CENTER);
@@ -109,7 +111,7 @@ public class SaleHistoryFlat  extends JFrame  {
   
     }
     
-    private void jButton1ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(ActionEvent evt) {
         setVisible(false);
         SecDashboard s=new SecDashboard();
         s.setVisible(true);

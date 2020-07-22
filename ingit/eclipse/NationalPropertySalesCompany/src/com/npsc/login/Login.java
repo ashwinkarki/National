@@ -1,5 +1,8 @@
 package com.npsc.login;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -76,14 +79,14 @@ public class Login extends JFrame {
 		loginassecretary.setBounds(250, 150, 150,40);
 	    panel.add(loginassecretary);
 	    
-	    loginasadmin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+	    loginasadmin.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 loginasadminActionPerformed(evt);
             }
         });
 	    
-	    loginassecretary.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+	    loginassecretary.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 loginassecretaryActionPerformed(evt);
             }
         });
@@ -95,7 +98,7 @@ public class Login extends JFrame {
 	
 	
 	
-	private void loginasadminActionPerformed(java.awt.event.ActionEvent evt) {                                             
+	private void loginasadminActionPerformed(ActionEvent evt) {                                             
         // TODO add your handling code here:
         String userName=username.getText();
         String password=passwordField.getText();
@@ -115,7 +118,7 @@ public class Login extends JFrame {
         }
     }  
     
-    private void loginassecretaryActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+    private void loginassecretaryActionPerformed(ActionEvent evt) {                                                 
         String userName=username.getText();
         String password=passwordField.getText();
 

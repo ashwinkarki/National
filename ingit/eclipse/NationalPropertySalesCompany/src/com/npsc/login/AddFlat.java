@@ -1,6 +1,7 @@
 package com.npsc.login;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -45,6 +46,7 @@ public class AddFlat extends JFrame {
 	    private JTextField sellingPrice;
 
 public AddFlat() {
+	setPreferredSize(new Dimension(600, 600));
 	jButton1=new JButton("Back");
 	next=new JButton("Save");
 	address=new JTextField(10);
@@ -52,7 +54,7 @@ public AddFlat() {
 	monthlyCharge=new JTextField(10);
 	rooms=new JTextField(10);
 	sellingPrice=new JTextField(10);
-		    setSize(700,300);
+		  
 		   setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	        add(createTopPanel(), BorderLayout.PAGE_START);
 	        add(createMainPanel(), BorderLayout.CENTER);
@@ -101,6 +103,7 @@ public AddFlat() {
 	  
 	  private JPanel createFormPanel() {
 	    	 JPanel formPanel = new JPanel(new GridBagLayout());
+	    	 formPanel.setSize(new Dimension(300,300));
 	         GridBagConstraints gbc = new GridBagConstraints();
 	         gbc.anchor = GridBagConstraints.LINE_START;
 	         gbc.gridx = 0;
@@ -135,7 +138,6 @@ public AddFlat() {
 	         formPanel.add(sellingPrice, gbc);
 	         
 	         sellingPrice.addKeyListener(new KeyAdapter() {
-	             // override keyReleased listener on the Email TextField
 	             @Override
 	             public void keyReleased(KeyEvent e) {
 	            	 sellingPriceKeyReleased(e);
@@ -172,7 +174,6 @@ public AddFlat() {
 	  private JPanel createMainPanel() {
 	        JPanel mainPanel = new JPanel(new GridLayout(0, 1, 5, 10));
 	        mainPanel.add(createFormPanel());
-	       // mainPanel.add(createTablePanel());
 	        return mainPanel;
 	    }
 
@@ -190,7 +191,7 @@ public AddFlat() {
 	        return topPanel;
 	    }
 	    
-	    private void nextActionPerformed(ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
+	    private void nextActionPerformed(ActionEvent evt) {
 	           
             
             Flat f=new Flat(address.getText(),

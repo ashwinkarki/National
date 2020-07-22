@@ -8,6 +8,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
@@ -318,8 +319,8 @@ public class SecDashboard extends JFrame {
 	       jScrollPane1.setViewportView(jTable1);
 	       
 	            }
-	            jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
-	                public void mouseClicked(java.awt.event.MouseEvent evt) {
+	            jTable1.addMouseListener(new MouseAdapter() {
+	                public void mouseClicked(MouseEvent evt) {
 	                    jTable1MouseClicked(evt);
 	                }
 	            });
@@ -334,8 +335,8 @@ public class SecDashboard extends JFrame {
 	        flatTable.setModel(new FlatModel(filteredFlat));
 	        jScrollPane2.setViewportView(flatTable);
 	        
-	        flatTable.addMouseListener(new java.awt.event.MouseAdapter() {
-	            public void mouseClicked(java.awt.event.MouseEvent evt) {
+	        flatTable.addMouseListener(new MouseAdapter() {
+	            public void mouseClicked(MouseEvent evt) {
 	                flatTableMouseClicked(evt);
 	            }
 	        });
@@ -347,19 +348,19 @@ public class SecDashboard extends JFrame {
 	    }
 
 	    
-	    private void addHouseActionPerformed(ActionEvent evt) {//GEN-FIRST:event_addHouseActionPerformed
+	    private void addHouseActionPerformed(ActionEvent evt) {
 	        setVisible(false);
 	        AddHouse adHouse=new AddHouse();
 	        adHouse.setVisible(true);
 	    }
 	    
-	    private void updateHouseActionPerformed(ActionEvent evt) {//GEN-FIRST:event_updateHouseActionPerformed
+	    private void updateHouseActionPerformed(ActionEvent evt) {
 	        setVisible(false);
 	        UpdateHouse u=new UpdateHouse();
 	        u.setVisible(true);
 	    }
 	    
-	    private void deleteHouseActionPerformed(ActionEvent evt) {//GEN-FIRST:event_deleteHouseActionPerformed
+	    private void deleteHouseActionPerformed(ActionEvent evt) {
 	        //house.setSecretary(SecretaryDaoImpl.sec);
 	         boolean x= houseDAO.delete(house);
 	        if(x){
@@ -379,7 +380,7 @@ public class SecDashboard extends JFrame {
 	        }
 	     }
 	    
-	    private void jButton1ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+	    private void jButton1ActionPerformed(ActionEvent evt) {
 	        if(house==null){
 	            JOptionPane.showMessageDialog(null,"Please select House");
 	        }
@@ -391,7 +392,7 @@ public class SecDashboard extends JFrame {
 	        }
 	    }
 	    
-	    private void addFlatActionPerformed(ActionEvent evt) {//GEN-FIRST:event_addFlatActionPerformed
+	    private void addFlatActionPerformed(ActionEvent evt) {
 	        
             setVisible(false);
       AddFlat ad=new AddFlat();
@@ -400,13 +401,13 @@ public class SecDashboard extends JFrame {
      
   }
 	    
-	    private void updateHouse1ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_updateHouse1ActionPerformed
+	    private void updateHouse1ActionPerformed(ActionEvent evt) {
 	        setVisible(false);
 	        UpdateFlat u=new UpdateFlat();
 	        u.setVisible(true);
 	    }
 	    
-	    private void deleteHouse1ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_deleteHouse1ActionPerformed
+	    private void deleteHouse1ActionPerformed(ActionEvent evt) {
 	        flat.setSec(SecretaryDaoImpl.sec);
 	         boolean x= flatDAO.delete(flat);
 	        if(x){
@@ -418,13 +419,13 @@ public class SecDashboard extends JFrame {
 	               
 	     }
 	    
-	    private void jButton2ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+	    private void jButton2ActionPerformed(ActionEvent evt) {
 	        setVisible(false);
 	            SaleFlat sh=new SaleFlat();
 	            sh.setVisible(true);
 	    }
 	    
-	    private void flatSaleHistoryActionPerformed(ActionEvent evt) {//GEN-FIRST:event_flatSaleHistoryActionPerformed
+	    private void flatSaleHistoryActionPerformed(ActionEvent evt) {
 	        setVisible(false);
 	            SaleHistoryFlat sh=new SaleHistoryFlat();
 	            sh.setVisible(true);
@@ -442,7 +443,7 @@ public class SecDashboard extends JFrame {
 	    }
 	    
 	    
-	    private void houseSaleHistoryActionPerformed(ActionEvent evt) {//GEN-FIRST:event_houseSaleHistoryActionPerformed
+	    private void houseSaleHistoryActionPerformed(ActionEvent evt) {
             setVisible(false);
             SaleHistory sh=new SaleHistory();
             sh.setVisible(true);
@@ -453,7 +454,7 @@ public class SecDashboard extends JFrame {
 	        initDetailFlat(flatTable.getSelectedRow());
 	    }
 	    
-	    private void jTable1MouseClicked(MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+	    private void jTable1MouseClicked(MouseEvent evt) {
 	        initDetail(jTable1.getSelectedRow());
 	    }  
 		    

@@ -239,7 +239,7 @@ public class AdminDashboard extends JFrame {
         bottomPanel.add(updateBtn,gbc);
         
         updateBtn.addActionListener(new ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            public void actionPerformed(ActionEvent evt) {
                 updateBtnActionPerformed(evt);
             }
         });
@@ -281,19 +281,19 @@ public class AdminDashboard extends JFrame {
   
     }
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton1ActionPerformed(ActionEvent evt) {
         setVisible(false);
         Addbranch ad=new Addbranch();
         ad.setVisible(true);
     }
     
     
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton2ActionPerformed(ActionEvent evt) {
         WriteReadFile.writeFile(secList);
         System.exit(0);
     }
     
-    private void deleteBtnActionPerformed(ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
+    private void deleteBtnActionPerformed(ActionEvent evt) {
         boolean result=secDao.delete(sec);
         if(result){
 
@@ -327,7 +327,7 @@ public class AdminDashboard extends JFrame {
     }
     
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {
-       System.out.println("xxx"+jtable1.getSelectedRow());
+      
     	initDetail(jtable1.getSelectedRow());
     }
     
