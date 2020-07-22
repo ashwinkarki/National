@@ -40,9 +40,9 @@ public class SaleDAOFlatImpl implements SaleFlatDAO {
      
     @Override
     public boolean insert(SaleFlats t) {
-        System.out.println(t);
+     
       boolean added=saleFlatList.add(t);
-          System.out.println(saleFlatList.size());
+          
       if(added){
           return true;
       }
@@ -62,7 +62,7 @@ public class SaleDAOFlatImpl implements SaleFlatDAO {
     @Override
     public boolean delete(SaleFlats t) {
       boolean removed= saleFlatList.remove(t);
-     System.out.print(removed);
+  
      if(removed){
          return true;
      }
@@ -70,14 +70,7 @@ public class SaleDAOFlatImpl implements SaleFlatDAO {
          return false;
      }
          
-//    for(int i=0;i<saleFlatList.size();i++){
-//          Sale s=saleFlatList.get(i);
-//          if(s.getId()==t.getId()){
-//              saleFlatList.remove(t);
-//          }
-//    }
-         
-               
+              
     }
 
     @Override
@@ -90,7 +83,7 @@ saleFlatList= (List<SaleFlats>) ois.readObject();
 ois.close();
 if(saleFlatList==null){
 saleFlatList=new ArrayList<SaleFlats>();
-System.out.println("Size of saleFlatList is"+saleFlatList.size());
+
 return saleFlatList;
 }
 else{
@@ -99,7 +92,7 @@ else{
         }
         catch(Exception e){
            saleFlatList=new ArrayList<SaleFlats>();
-            System.out.println("not able to read");
+          
           return saleFlatList;  
         }   
         }
@@ -138,7 +131,7 @@ else{
               newArr.add(h);
          }
      }
-        System.out.println("newArr us"+newArr);
+       
     return newArr;
         
     }
@@ -152,7 +145,7 @@ else{
               newArr.add(h);
          }
      }
-        System.out.println("newArr us"+newArr);
+        
     return newArr;
     
     }

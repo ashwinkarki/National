@@ -203,7 +203,7 @@ public AddFlat() {
    int id=fDao.getMaximumid();
      f.setId(id+1);
      f.setSec(SecretaryDaoImpl.sec);
-     System.out.println("New flat inserted is"+f);
+   
      boolean ss=fDao.insert(f);
    if(ss){
          JOptionPane.showMessageDialog(null,"Adding new flat successful");

@@ -35,8 +35,7 @@ public class AdminDaoImpl implements AdminDao {
   
             in.close(); 
             file.close(); 
-            System.out.println("Object has been deserialized\n"
-                                + "Data after Deserialization."); 
+          
             printdata(admin); 
             
             if(admin.getUserName().equals(username) && admin.getPassword().equals(pw)){
@@ -50,7 +49,7 @@ public class AdminDaoImpl implements AdminDao {
         } 
   
         catch (ClassNotFoundException ex) { 
-            System.out.println("ClassNotFoundException" + 
+        	 System.out.println("ClassNotFoundException" + 
                                 " is caught"); 
         } 
             return false;    
@@ -59,9 +58,7 @@ public class AdminDaoImpl implements AdminDao {
     public static void printdata(Administrator object1) 
     { 
   
-        System.out.println("getId = " + object1.getId()); 
-        System.out.println("getUsername = " + object1.getUserName()); 
-        System.out.println("getPassword = " + object1.getPassword()); 
+      
         
     } 
   

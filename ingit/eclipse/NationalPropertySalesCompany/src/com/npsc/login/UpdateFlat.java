@@ -197,7 +197,7 @@ public class UpdateFlat  extends JFrame  {
 	    }
 	    
 	    private void updateActionPerformed(ActionEvent evt) {
-	    System.out.println("f is"+f);
+	  
 	        Flat newFlat=new Flat(f.getId(),address.getText(),
 	            Integer.parseInt(rooms.getText()), Integer.parseInt(sellingPrice.getText()), Integer.parseInt(floor.getText()), Integer.parseInt(monthlyCharge.getText()));
 	        //  f.setHouse(house);

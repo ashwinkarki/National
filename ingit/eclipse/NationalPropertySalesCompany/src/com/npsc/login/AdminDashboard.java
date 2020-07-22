@@ -56,7 +56,7 @@ public class AdminDashboard extends JFrame {
     private static JPanel panel,subPanel1,panel2,panel3;
     
     public AdminDashboard() {
-    	System.out.print("added");
+    	
     	 setSize(700,500);
     	 updateBtn = new  JButton("Update");
     	 jtable1=new JTable();
@@ -265,7 +265,7 @@ public class AdminDashboard extends JFrame {
         secDao=new SecretaryDaoImpl();
         secList=new ArrayList<>();
            secList=secDao.getAll();
-       System.out.println(secList);
+     
          if (secList !=null){
              
        jtable1.setVisible(true);
@@ -315,8 +315,7 @@ public class AdminDashboard extends JFrame {
     
     protected void initDetail(int selectedRow) {
         sec = secList.get(jtable1.convertRowIndexToModel(selectedRow));
-        System.out.println("sec is"+sec);
-        System.out.print(sec.getUserName()+"after clicked is");
+     
         name.setText(sec.getBranch().getName());
         password.setText(sec.getPassword());
         phonenum.setText(sec.getBranch().getPhonenum());

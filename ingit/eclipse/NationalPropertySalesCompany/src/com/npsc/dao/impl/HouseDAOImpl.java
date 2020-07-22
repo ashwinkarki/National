@@ -36,9 +36,9 @@ public class HouseDAOImpl implements HouseDAO {
     
     @Override
     public boolean insert(House t) {
-        System.out.println(t);
+        
       boolean added=houseList.add(t);
-          System.out.println(houseList.size());
+       
       if(added){
           return true;
       }
@@ -58,9 +58,9 @@ public class HouseDAOImpl implements HouseDAO {
     @Override
     public boolean delete(House t) {
       boolean removed= houseList.remove(t);
-     System.out.print(removed);
+   
      
-        System.out.println("after removed"+houseList);
+      
       if(removed){
          return true;
      }
@@ -88,7 +88,7 @@ houseList= (List<House>) ois.readObject();
 ois.close();
 if(houseList==null){
 houseList=new ArrayList<House>();
-System.out.println("Size of houselist is"+houseList.size());
+
 return houseList;
 }
 else{
@@ -97,7 +97,7 @@ else{
         }
         catch(Exception e){
            houseList=new ArrayList<House>();
-            System.out.println("not able to read");
+           
           return houseList;  
         }   
         }
@@ -147,7 +147,7 @@ else{
               newArr.add(h);
          }
      }
-        System.out.println("fileted house is"+newArr);
+      
     return newArr;
     }
 

@@ -38,9 +38,9 @@ public class FlatDAOImpl implements FlatDAO {
     
     @Override
     public boolean insert(Flat t) {
-        System.out.println(t);
+      
       boolean added=flatList.add(t);
-          System.out.println(flatList.size());
+      
       if(added){
           return true;
       }
@@ -60,7 +60,7 @@ public class FlatDAOImpl implements FlatDAO {
     @Override
     public boolean delete(Flat t) {
       boolean removed= flatList.remove(t);
-     System.out.print(removed);
+   
      if(removed){
          return true;
      }
@@ -88,7 +88,7 @@ flatList= (List<Flat>) ois.readObject();
 ois.close();
 if(flatList==null){
 flatList=new ArrayList<Flat>();
-System.out.println("Size of houselist is"+flatList.size());
+
 return flatList;
 }
 else{
@@ -97,7 +97,7 @@ else{
         }
         catch(Exception e){
            flatList=new ArrayList<Flat>();
-            System.out.println("not able to read");
+            
           return flatList;  
         }   
         }
@@ -129,18 +129,17 @@ else{
     @Override
     public List<Flat> getBySecretaryId() {
    Secretary s=SecretaryDaoImpl.sec;
-   System.out.println("secreatary is"+s);
-   System.out.print("flat size is"+flatList.size());
+  
        List<Flat> newArr=new ArrayList<>();
        
-       System.out.println(flatList);
+      
        
       for(Flat h:flatList){
           if(h.getSec().getId()==s.getId()){
               newArr.add(h);
          }
      }
-        System.out.println("fileted flat  is"+newArr);
+       
     return newArr;
     }
 

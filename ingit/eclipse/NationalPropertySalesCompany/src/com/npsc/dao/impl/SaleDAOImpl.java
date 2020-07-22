@@ -39,9 +39,9 @@ public class SaleDAOImpl implements SalesDAO {
     
     @Override
     public boolean insert(Sale t) {
-        System.out.println(t);
+     
       boolean added=saleList.add(t);
-          System.out.println(saleList.size());
+       
       if(added){
           return true;
       }
@@ -61,7 +61,7 @@ public class SaleDAOImpl implements SalesDAO {
     @Override
     public boolean delete(Sale t) {
       boolean removed= saleList.remove(t);
-     System.out.print(removed);
+     
      if(removed){
          return true;
      }
@@ -89,7 +89,7 @@ saleList= (List<Sale>) ois.readObject();
 ois.close();
 if(saleList==null){
 saleList=new ArrayList<Sale>();
-System.out.println("Size of saleList is"+saleList.size());
+
 return saleList;
 }
 else{
@@ -98,7 +98,7 @@ else{
         }
         catch(Exception e){
            saleList=new ArrayList<Sale>();
-            System.out.println("not able to read");
+            
           return saleList;  
         }   
         }
@@ -137,7 +137,7 @@ else{
               newArr.add(h);
          }
      }
-        System.out.println("newArr us"+newArr);
+        
     return newArr;
         
     }
@@ -151,7 +151,7 @@ else{
               newArr.add(h);
          }
      }
-        System.out.println("newArr us"+newArr);
+      
     return newArr;
     
     }

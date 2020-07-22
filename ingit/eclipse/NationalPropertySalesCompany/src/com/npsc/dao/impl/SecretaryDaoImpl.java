@@ -37,9 +37,9 @@ public class SecretaryDaoImpl implements SecretaryDAO {
     
     @Override
     public boolean insert(Secretary t) {
-        System.out.println(t);
+        
       boolean added=secList.add(t);
-          System.out.println(secList.size());
+          
       if(added){
           return true;
       }
@@ -58,7 +58,7 @@ public class SecretaryDaoImpl implements SecretaryDAO {
     @Override
     public boolean delete(Secretary t) {
       boolean removed= secList.remove(t);
-     System.out.print(removed);
+     
      if(removed){
          return true;
      }
@@ -66,12 +66,7 @@ public class SecretaryDaoImpl implements SecretaryDAO {
          return false;
      }
          
-//    for(int i=0;i<secList.size();i++){
-//          Secretary s=secList.get(i);
-//          if(s.getId()==t.getId()){
-//              secList.remove(t);
-//          }
-//    }
+
          
                
     }
@@ -86,7 +81,7 @@ secList= (List<Secretary>) ois.readObject();
 ois.close();
 if(secList==null){
 secList=new ArrayList<Secretary>();
-System.out.println("Size of secretary is"+secList.size());
+
 return secList;
 }
 else{
@@ -95,7 +90,7 @@ else{
         }
         catch(Exception e){
            secList=new ArrayList<Secretary>();
-            System.out.println("not able to read");
+           
           return secList;  
         }   
         }
@@ -128,7 +123,7 @@ else{
     public boolean getSec(String userName, String password) {
        List<Secretary> secList=getAll();
         for(Secretary s:secList){
-            System.out.println(s.getUserName()+s.getPassword());
+           
             if(s.getUserName().equals(userName) && 
                     s.getPassword().equals(password)){
                 sec=s;

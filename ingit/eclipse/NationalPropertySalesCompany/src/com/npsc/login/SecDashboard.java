@@ -141,11 +141,8 @@ public class SecDashboard extends JFrame {
 	             }
 	         });
 	         
-	         
-	         
-
-	        	         
-	         gbc.gridx = 5;
+	         	         
+	         gbc.gridx = 10;
 	         gbc.insets.left = 15;
 	         gbc.anchor = GridBagConstraints.SOUTHEAST;
 	         buttomPanel.add(jButton2, gbc);
@@ -213,7 +210,7 @@ public class SecDashboard extends JFrame {
 	
 	    private JPanel buttons() {
 	    	 JPanel buttonPanel = new JPanel(new GridBagLayout());
-	    	 buttonPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+	    	// buttonPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 	         GridBagConstraints gbc = new GridBagConstraints();
 	         gbc.anchor = GridBagConstraints.NORTHWEST;
 	         gbc.gridx = 0;
@@ -251,8 +248,8 @@ public class SecDashboard extends JFrame {
 
 	         
 	         gbc.gridx = 5;
-	         gbc.insets.left = 15;
-	         gbc.anchor = GridBagConstraints.SOUTHEAST;
+	         gbc.insets.left = 90;
+	       //  gbc.anchor = GridBagConstraints.SOUTHEAST;
 	         buttonPanel.add(addFlat  , gbc);
 	         
 	         addFlat.addActionListener(new ActionListener() {
@@ -262,7 +259,8 @@ public class SecDashboard extends JFrame {
 	         });
 	         
 	         
-	         gbc.gridx = 6;
+	         gbc.gridx = 7;
+	         gbc.insets.left = 5;
 	         buttonPanel.add(updateHouse1  , gbc);
 	         
 	         updateHouse1.addActionListener(new ActionListener() {
@@ -272,7 +270,8 @@ public class SecDashboard extends JFrame {
 	         });
 
 	         
-	         gbc.gridx = 7;
+	         gbc.gridx = 9;
+	         gbc.insets.left = 5;
 	         buttonPanel.add(deleteHouse1, gbc);
 	         
 	         deleteHouse1.addActionListener(new ActionListener() {
@@ -296,13 +295,13 @@ public class SecDashboard extends JFrame {
 
 		protected void initDetail(int selectedRow) {
 	        house = filteredHouse.get(jTable1.convertRowIndexToModel(selectedRow));
-	    System.out.print("house seelctd"+house);
+	
 	      
 	    }
 	    
 	       protected void initDetailFlat(int selectedRow) {
 	        flat = filteredFlat.get(jTable1.convertRowIndexToModel(selectedRow));
-	        System.out.print("flatselect is"+flat);
+	     
 	      
 	    }
 	       
