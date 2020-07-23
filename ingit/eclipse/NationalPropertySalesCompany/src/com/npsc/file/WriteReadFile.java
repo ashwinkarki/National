@@ -45,7 +45,7 @@ public class WriteReadFile {
                 ois.close();
             }
         }catch(IOException | ClassNotFoundException e){e.getMessage();}  
-         System.out.println("seccccc is" +secList.size());
+         
         return secList;
     } 
      }

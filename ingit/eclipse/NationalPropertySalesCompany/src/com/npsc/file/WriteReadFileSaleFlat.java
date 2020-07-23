@@ -46,7 +46,7 @@ public class WriteReadFileSaleFlat {
                 ois.close();
             }
         }catch(IOException | ClassNotFoundException e){e.getMessage();}  
-         System.out.println("sale is" +saleList.size());
+        
         return saleList;
     } 
      }

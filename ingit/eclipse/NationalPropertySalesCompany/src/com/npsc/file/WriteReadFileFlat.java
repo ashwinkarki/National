@@ -45,7 +45,7 @@ public class WriteReadFileFlat {
                 ois.close();
             }
         }catch(IOException | ClassNotFoundException e){e.getMessage();}  
-         System.out.println("flat is" +flatList.size());
+         
         return flatList;
     } 
      }

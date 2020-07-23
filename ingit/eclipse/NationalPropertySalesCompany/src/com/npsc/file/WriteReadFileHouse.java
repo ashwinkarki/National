@@ -45,7 +45,7 @@ public class WriteReadFileHouse {
                 ois.close();
             }
         }catch(IOException | ClassNotFoundException e){e.getMessage();}  
-         System.out.println("house is" +houseList.size());
+        
         return houseList;
     } 
      }
